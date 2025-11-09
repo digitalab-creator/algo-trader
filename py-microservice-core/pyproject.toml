@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-microservice-core"
+version = "1.0.0"
+description = "Python microservice infrastructure package - FastAPI, PostgreSQL, Redis, monitoring, and more"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = [
+    "microservice",
+    "fastapi",
+    "infrastructure",
+    "postgres",
+    "redis",
+    "monitoring",
+    "logging"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "sqlalchemy>=2.0.0",
+    "alembic>=1.13.0",
+    "psycopg[binary]>=3.1.0",
+    "redis>=5.0.0",
+    "httpx>=0.25.0",
+    "structlog>=23.2.0",
+    "python-json-logger>=2.0.7",
+    "tenacity>=8.2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.11.0",
+    "ruff>=0.1.6",
+    "mypy>=1.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/py-microservice-core"
+Documentation = "https://github.com/yourusername/py-microservice-core/blob/main/README.md"
+Repository = "https://github.com/yourusername/py-microservice-core"
+
+[project.scripts]
+validate-microservice = "py_microservice_core.validation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+py_microservice_core = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+

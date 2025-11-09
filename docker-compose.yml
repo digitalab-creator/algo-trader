@@ -1,0 +1,52 @@
+services:
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      DATABASE_URL: postgresql+psycopg://user:pass@db:5432/algo
+      REDIS_URL: redis://redis:6379/0
+      MODE: paper
+      LOG_LEVEL: INFO
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: algo
+      # Simulated broker mode (set to "false" when connecting to a real IBKR gateway)
+      BROKER_SIMULATED: "true"
+      SIMULATED_EQUITY: "100000"
+      # Market data source: ibkr, yfinance, or alphavantage
+      MARKET_DATA_SOURCE: alphavantage
+      # IBKR connection (for live trading + data)
+      IBKR_HOST: 127.0.0.1
+      IBKR_PORT: 7497
+      IBKR_CLIENT_ID: 101
+      # Alpha Vantage (optional, for free data without rate limits)
+      # Get free key at: https://www.alphavantage.co/support/#api-key
+      ALPHA_VANTAGE_API_KEY: 0Z09IF6LZ9M6KYWB
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+  
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pass}
+      POSTGRES_DB: ${POSTGRES_DB:-algo}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
