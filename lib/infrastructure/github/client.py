@@ -150,6 +150,24 @@ class GitHubClient:
         if sanitized not in current_url and auth_url not in current_url:
             self._run_git(["remote", "set-url", remote, auth_url])
 
+    def ensure_branch(self, branch: str) -> None:
+        """
+        Ensure that the repository is on the desired branch, creating it if necessary.
+        """
+
+        branch = branch.strip()
+        if not branch:
+            return
+
+        status = self._run_git(["rev-parse", "--abbrev-ref", "HEAD"], check=False)
+        current = status.stdout.strip() if status.returncode == 0 else ""
+
+        if current == branch:
+            return
+
+        # Create or reset branch to current HEAD (similar to git checkout -B)
+        self._run_git(["checkout", "-B", branch], check=False)
+
     def add(self, paths: Iterable[str] | None = None) -> None:
         """
         Stage files for commit. By default stages all tracked/untracked files.

@@ -63,7 +63,7 @@ This cheat sheet lists common commands to interact with the Algo-Fleet stack usi
   print(f"Configured {client.config.remote_name} -> {client.config.sanitized_url()}")
   '
   ```
-- Stage, commit, and push changes (requires git available inside the container):
+- Stage, commit, and push changes (requires git available inside the container). The helper will create/checkout `GITHUB_BRANCH` if needed:
   ```bash
   docker compose exec api python -c "import os
 from lib.infrastructure.github import GitHubClient

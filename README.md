@@ -70,7 +70,7 @@ algo-fleet/
    docker compose exec api python scripts/run_medium.py
    ```
 6. Inspect trades via FastAPI docs at `http://localhost:8000/docs` or query `/trades`.
-7. When ready to push code, configure `.env` from `env.example` (including `GITHUB_BRANCH`, default `dev`) and run:
+7. When ready to push code, configure `.env` from `env.example` (including `GITHUB_BRANCH`, default `dev`). The helper will create the branch locally if it doesn’t exist. Then run:
    ```bash
    python scripts/push_to_github.py
    ```

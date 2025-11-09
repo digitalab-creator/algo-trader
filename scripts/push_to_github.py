@@ -95,6 +95,7 @@ def main() -> None:
         client.config.repo_path = REPO_PATH
         client.ensure_repository()
         client.ensure_remote()
+        client.ensure_branch(GITHUB_BRANCH)
         print(f"✅ Remote configured: {client.config.remote_name} -> {client.config.sanitized_url()}")
 
         # Configure git author identity if provided.
