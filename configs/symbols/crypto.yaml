@@ -1,0 +1,25 @@
+# Cryptocurrency Symbol Universe
+# Format depends on broker - adjust for your needs
+
+# IBKR format (if supported)
+ibkr:
+  - BTCUSD  # Bitcoin
+  - ETHUSD  # Ethereum
+
+# yfinance format
+yfinance:
+  - BTC-USD  # Bitcoin
+  - ETH-USD  # Ethereum
+  - SOL-USD  # Solana
+  - ADA-USD  # Cardano
+  - DOT-USD  # Polkadot
+  - DOGE-USD # Dogecoin
+  - MATIC-USD # Polygon
+  - AVAX-USD  # Avalanche
+
+# Default for testing
+default:
+  - BTC-USD
+  - ETH-USD
+  - SOL-USD
+

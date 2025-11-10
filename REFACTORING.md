@@ -62,12 +62,16 @@ algo-trading/
 │   │   ├── risk.py
 │   │   └── orders.py
 │   ├── models/                # Unchanged
-│   └── strategies/            # Unchanged
+│   └── strategies/            # Trading logic + shared runner
+│       ├── base.py            # NEW: BaseStrategyRunner + StrategyResult
+│       ├── high_intraday.py   # Now subclasses base runner
+│       ├── medium_swing.py    # Now subclasses base runner
+│       └── low_passive.py     # Now subclasses base runner
 │
 ├── scripts/
-│   ├── run_medium.py          # UPDATED: Uses lib/infrastructure
-│   ├── run_high.py            # TODO: Update like run_medium.py
-│   └── run_low.py             # TODO: Update like run_medium.py
+│   ├── run_medium.py          # Thin wrapper around MediumSwingRunner
+│   ├── run_high.py            # Thin wrapper around HighIntradayRunner
+│   └── run_low.py             # Thin wrapper around LowPassiveRunner
 │
 └── requirements.txt           # UPDATED: Added structlog, redis
 ```
@@ -88,7 +92,7 @@ algo-trading/
 - ✅ Broker client (IBKR)
 - ✅ Risk management
 - ✅ Order management
-- ✅ Trading strategies
+- ✅ Strategy runners & signal logic
 - ✅ Domain models
 
 ---

@@ -1,0 +1,20 @@
+# Forex Symbol Universe
+
+major_pairs:
+  - EUR.USD  # Euro / US Dollar
+  - GBP.USD  # British Pound / US Dollar
+  - USD.JPY  # US Dollar / Japanese Yen
+  - AUD.USD  # Australian Dollar / US Dollar
+  - USD.CHF  # US Dollar / Swiss Franc
+  - USD.CAD  # US Dollar / Canadian Dollar
+
+cross_pairs:
+  - EUR.GBP  # Euro / British Pound
+  - EUR.JPY  # Euro / Japanese Yen
+  - GBP.JPY  # British Pound / Japanese Yen
+
+# Default for testing
+default:
+  - EUR.USD
+  - GBP.USD
+

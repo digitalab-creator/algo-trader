@@ -34,26 +34,45 @@ class GitHubConfig:
     username: str | None
     remote_name: str
     repo_path: Path
+    commit_name: str
+    commit_email: str
 
     @classmethod
     def from_env(cls) -> "GitHubConfig":
-        repo_url = os.getenv("GITHUB_REPO_URL")
-        if not repo_url:
+        raw_repo_url = os.getenv("GITHUB_REPO_URL")
+        if not raw_repo_url:
             raise GitHubConfigError(
                 "GITHUB_REPO_URL environment variable is required for GitHub operations."
             )
+
+        repo_url = raw_repo_url.strip()
+        parsed_repo_url = urlparse(repo_url)
 
         token = os.getenv("GITHUB_TOKEN")
         username = os.getenv("GITHUB_USERNAME")
         remote_name = os.getenv("GITHUB_REMOTE_NAME", "origin")
         repo_path = Path(os.getenv("GIT_REPO_PATH", ".")).resolve()
+        commit_name = os.getenv("GITHUB_COMMIT_NAME")
+        commit_email = os.getenv("GITHUB_COMMIT_EMAIL")
+
+        embedded_username = parsed_repo_url.username or (username.strip() if username else "")
+
+        if not commit_name:
+            # Prefer configured username; fall back to embedded URL username; default to automation label.
+            commit_name = embedded_username or "automation"
+
+        if not commit_email:
+            base = embedded_username or commit_name.replace(" ", "").lower() or "automation"
+            commit_email = f"{base}@users.noreply.github.com"
 
         return cls(
-            repo_url=repo_url.strip(),
+            repo_url=repo_url,
             token=(token.strip() if token else None),
             username=(username.strip() if username else None),
             remote_name=remote_name.strip(),
             repo_path=repo_path,
+            commit_name=commit_name.strip(),
+            commit_email=commit_email.strip(),
         )
 
     def authenticated_url(self) -> str:
@@ -150,6 +169,22 @@ class GitHubClient:
         if sanitized not in current_url and auth_url not in current_url:
             self._run_git(["remote", "set-url", remote, auth_url])
 
+    def ensure_identity(self) -> None:
+        """
+        Configure git committer identity for the repository if missing.
+        """
+
+        name = self.config.commit_name
+        email = self.config.commit_email
+
+        if not name or not email:
+            raise GitHubConfigError(
+                "Git committer identity requires both GITHUB_COMMIT_NAME and GITHUB_COMMIT_EMAIL or a repo URL embedding credentials."
+            )
+
+        self._run_git(["config", "user.name", name])
+        self._run_git(["config", "user.email", email])
+
     def ensure_branch(self, branch: str) -> None:
         """
         Ensure that the repository is on the desired branch, creating it if necessary.
@@ -228,6 +263,7 @@ class GitHubClient:
         """
 
         self.ensure_repository()
+        self.ensure_identity()
         self.ensure_remote()
         self.add(paths)
         committed = self.commit(message)

@@ -1,0 +1,47 @@
+# ETF Symbol Universe (Low-Risk Layer)
+
+# Broad Market
+broad_market:
+  - SPY    # S&P 500
+  - VTI    # Vanguard Total Stock Market
+  - VOO    # Vanguard S&P 500
+  - IWM    # Russell 2000 Small Cap
+  - DIA    # Dow Jones Industrial Average
+
+# International
+international:
+  - EFA    # MSCI EAFE International
+  - VEA    # Vanguard FTSE Developed Markets
+  - EEM    # MSCI Emerging Markets
+  - VWO    # Vanguard FTSE Emerging Markets
+
+# Bonds
+bonds:
+  - AGG    # iShares Core US Aggregate Bond
+  - BND    # Vanguard Total Bond Market
+  - TLT    # iShares 20+ Year Treasury Bond
+  - SHY    # iShares 1-3 Year Treasury Bond
+
+# Commodities
+commodities:
+  - GLD    # SPDR Gold Trust
+  - SLV    # iShares Silver Trust
+  - USO    # United States Oil Fund
+  - DBA    # Invesco DB Agriculture Fund
+
+# Sector ETFs
+sectors:
+  - XLK    # Technology Select Sector SPDR
+  - XLF    # Financial Select Sector SPDR
+  - XLE    # Energy Select Sector SPDR
+  - XLV    # Health Care Select Sector SPDR
+  - XLI    # Industrial Select Sector SPDR
+
+# Default low-risk portfolio
+default:
+  - SPY    # 40% - Large cap US stocks
+  - VTI    # 20% - Total US market
+  - EFA    # 20% - International developed
+  - AGG    # 15% - Bonds
+  - GLD    # 5%  - Gold hedge
+

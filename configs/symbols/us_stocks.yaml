@@ -1,0 +1,54 @@
+# US Stock Symbol Universe
+# Comprehensive list for backtesting and live trading
+
+mega_cap:
+  - AAPL   # Apple
+  - MSFT   # Microsoft
+  - GOOGL  # Alphabet (Google)
+  - AMZN   # Amazon
+  - NVDA   # Nvidia
+  - TSLA   # Tesla
+  - META   # Meta (Facebook)
+  - BRK.B  # Berkshire Hathaway
+
+high_volume:
+  - SPY    # S&P 500 ETF
+  - QQQ    # Nasdaq-100 ETF
+  - AMD    # Advanced Micro Devices
+  - NFLX   # Netflix
+  - DIS    # Disney
+  - BA     # Boeing
+  - JPM    # JP Morgan Chase
+  - V      # Visa
+  - MA     # Mastercard
+  - PYPL   # PayPal
+
+volatile:
+  - GME    # GameStop
+  - AMC    # AMC Entertainment
+  - PLTR   # Palantir
+  - NIO    # Nio
+  - RIVN   # Rivian
+  - LCID   # Lucid Motors
+  - BB     # BlackBerry
+  - NOK    # Nokia
+
+growth:
+  - SHOP   # Shopify
+  - SQ     # Block (Square)
+  - ROKU   # Roku
+  - SNAP   # Snap Inc
+  - UBER   # Uber
+  - LYFT   # Lyft
+  - COIN   # Coinbase
+
+# Default list for quick testing (high liquidity, good data availability)
+default:
+  - AAPL
+  - MSFT
+  - SPY
+  - QQQ
+  - TSLA
+  - AMD
+  - NVDA
+

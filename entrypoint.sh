@@ -1,7 +1,11 @@
 #!/bin/sh
 set -e
 
-alembic upgrade head
+if [ -n "$ALEMBIC_CONFIG" ]; then
+  alembic -c "$ALEMBIC_CONFIG" upgrade head
+else
+  alembic upgrade head
+fi
 
 exec "$@"
 

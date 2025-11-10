@@ -18,6 +18,13 @@ This cheat sheet lists common commands to interact with the Algo-Fleet stack usi
   docker compose exec api python scripts/run_medium.py
   docker compose exec api python scripts/run_low.py
   ```
+- Override the virtual budget when simulating (values in USD):
+  ```bash
+  docker compose exec api python scripts/run_medium.py --budget 25000
+  docker compose exec api python scripts/run_high.py --budget 5000
+  docker compose exec api python scripts/run_low.py --budget 75000
+  ```
+  Each script now prints a summary including trades created, capital deployed, and projected profit based on the strategy targets.
 - Run a strategy against a real IBKR gateway (requires TWS/IBG running and `BROKER_SIMULATED=false`):
   ```bash
   docker compose exec -e BROKER_SIMULATED=false api python scripts/run_medium.py
@@ -195,6 +202,47 @@ client.commit_and_push('chore: automated update', branch=branch)"
 - Root welcome message:
   ```bash
   curl http://localhost:8000/
+  ```
+
+## Backtesting Service (CLI & API)
+- Run a backtest inside the dedicated container (accepts custom capital):
+  ```bash
+  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py \
+    --strategy medium_swing_v1 \
+    --symbols AAPL,MSFT \
+    --start 2023-01-01 --end 2023-06-01 \
+    --initial-capital 150000 \
+    --show-trades
+  ```
+  Output includes initial/final capital, ROI, total profit, and (with `--show-trades`) a line-by-line trade ledger.
+- Request intraday resolution (5 minute) and start from a clean cache so yfinance/Alpha Vantage refetch fresh bars:
+  ```bash
+  docker compose exec backtesting sh -c "rm -rf data/cache/*"
+
+  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py \
+    --strategy high_intraday_v1 \
+    --symbols AAPL,MSFT \
+    --start 2025-01-01 --end 2025-11-01 \
+    --interval 5m \
+    --show-trades
+  ```
+  (Intraday data uses chunked yfinance requests and falls back to Alpha Vantage; without a premium key the latter is daily-only.)
+- Launch a backtesting grid search from YAML config:
+  ```bash
+  docker compose exec backtesting python apps/backtesting/cli/grid_search.py \
+    configs/grid_search/medium_grid.yaml --max-workers 4 --initial-capital 200000
+  ```
+- Query completed runs via API:
+  ```bash
+  curl http://localhost:8001/backtests
+  ```
+- Inspect trade details for a specific run:
+  ```bash
+  curl http://localhost:8001/backtests/2/trades
+  ```
+- View analytics summary (total runs, ROI ranges, best strategy):
+  ```bash
+  curl http://localhost:8001/backtests/analytics/summary
   ```
 
 ## Database Operations

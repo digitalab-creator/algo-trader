@@ -1,7 +1,9 @@
 services:
   api:
     build: .
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn apps.trading.api.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql+psycopg://user:pass@db:5432/algo
       REDIS_URL: redis://redis:6379/0
@@ -29,7 +31,26 @@ services:
     depends_on:
       - db
       - redis
-  
+
+  backtesting:
+    build: .
+    command: uvicorn apps.backtesting.api.main:app --host 0.0.0.0 --port 8001 --reload
+    environment:
+      PYTHONPATH: /app
+      ALEMBIC_CONFIG: apps/backtesting/alembic.ini
+      BACKTESTING_DATABASE_URL: postgresql+psycopg://backtest_user:backtest_pass@backtesting-db:5432/backtesting_db
+      SIMULATION_COMMISSION: "0"
+      SIMULATION_SLIPPAGE: "0"
+      MARKET_DATA_SOURCE: yfinance
+      ALPHA_VANTAGE_API_KEY: 0Z09IF6LZ9M6KYWB
+    volumes:
+      - .:/app
+      - ./data:/data
+    ports:
+      - "8001:8001"
+    depends_on:
+      - backtesting-db
+
   redis:
     image: redis:7-alpine
     ports:
@@ -47,6 +68,19 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backtesting-db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: backtest_user
+      POSTGRES_PASSWORD: backtest_pass
+      POSTGRES_DB: backtesting_db
+    ports:
+      - "5440:5432"
+    volumes:
+      - backtesting_pgdata:/var/lib/postgresql/data
+
 volumes:
   pgdata:
+  backtesting_pgdata:
 
