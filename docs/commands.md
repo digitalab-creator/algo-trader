@@ -206,32 +206,21 @@ client.commit_and_push('chore: automated update', branch=branch)"
 
 ## Backtesting Service (CLI & API)
 - Run a backtest inside the dedicated container (accepts custom capital):
-  ```bash
-  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py \
-    --strategy medium_swing_v1 \
-    --symbols AAPL,MSFT \
-    --start 2023-01-01 --end 2023-06-01 \
-    --initial-capital 150000 \
-    --show-trades
+  ```powershell
+  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py --strategy medium_swing_v1 --symbols AAPL,MSFT --start 2023-01-01 --end 2023-06-01 --initial-capital 150000 --show-trades
   ```
   Output includes initial/final capital, ROI, total profit, and (with `--show-trades`) a line-by-line trade ledger.
 - Request intraday resolution (5 minute) and start from a clean cache so yfinance/Alpha Vantage refetch fresh bars:
-  ```bash
+  ```powershell
   docker compose exec backtesting sh -c "rm -rf data/cache/*"
-
-  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py \
-    --strategy high_intraday_v1 \
-    --symbols AAPL,MSFT \
-    --start 2025-01-01 --end 2025-11-01 \
-    --interval 5m \
-    --show-trades
+  docker compose exec backtesting python apps/backtesting/cli/run_backtest.py --strategy high_intraday_v1 --symbols AAPL,MSFT --start 2025-01-01 --end 2025-11-01 --interval 5m --show-trades
   ```
   (Intraday data uses chunked yfinance requests and falls back to Alpha Vantage; without a premium key the latter is daily-only.)
 - Launch a backtesting grid search from YAML config:
-  ```bash
-  docker compose exec backtesting python apps/backtesting/cli/grid_search.py \
-    configs/grid_search/medium_grid.yaml --max-workers 4 --initial-capital 200000
+  ```powershell
+  docker compose exec backtesting python apps/backtesting/cli/grid_search.py configs/grid_search/medium_grid.yaml --max-workers 4 --initial-capital 200000
   ```
+  _Tip: Windows PowerShell prefers backticks (`) instead of trailing backslashes if you want to split commands across lines._
 - Query completed runs via API:
   ```bash
   curl http://localhost:8001/backtests

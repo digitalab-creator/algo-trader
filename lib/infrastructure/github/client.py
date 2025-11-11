@@ -36,6 +36,7 @@ class GitHubConfig:
     repo_path: Path
     commit_name: str
     commit_email: str
+    commit_identity_explicit: bool
 
     @classmethod
     def from_env(cls) -> "GitHubConfig":
@@ -52,18 +53,22 @@ class GitHubConfig:
         username = os.getenv("GITHUB_USERNAME")
         remote_name = os.getenv("GITHUB_REMOTE_NAME", "origin")
         repo_path = Path(os.getenv("GIT_REPO_PATH", ".")).resolve()
-        commit_name = os.getenv("GITHUB_COMMIT_NAME")
-        commit_email = os.getenv("GITHUB_COMMIT_EMAIL")
+        commit_name_env = os.getenv("GITHUB_COMMIT_NAME")
+        commit_email_env = os.getenv("GITHUB_COMMIT_EMAIL")
 
         embedded_username = parsed_repo_url.username or (username.strip() if username else "")
 
-        if not commit_name:
+        if not commit_name_env:
             # Prefer configured username; fall back to embedded URL username; default to automation label.
             commit_name = embedded_username or "automation"
+        else:
+            commit_name = commit_name_env.strip()
 
-        if not commit_email:
+        if not commit_email_env:
             base = embedded_username or commit_name.replace(" ", "").lower() or "automation"
             commit_email = f"{base}@users.noreply.github.com"
+        else:
+            commit_email = commit_email_env.strip()
 
         return cls(
             repo_url=repo_url,
@@ -73,6 +78,7 @@ class GitHubConfig:
             repo_path=repo_path,
             commit_name=commit_name.strip(),
             commit_email=commit_email.strip(),
+            commit_identity_explicit=bool(commit_name_env or commit_email_env),
         )
 
     def authenticated_url(self) -> str:
@@ -169,21 +175,93 @@ class GitHubClient:
         if sanitized not in current_url and auth_url not in current_url:
             self._run_git(["remote", "set-url", remote, auth_url])
 
+    def _get_git_config(self, key: str) -> str | None:
+        """
+        Fetch a git configuration value for the local repository.
+        """
+
+        result = self._run_git(["config", "--get", key], check=False)
+        if result.returncode != 0:
+            return None
+        value = result.stdout.strip()
+        return value or None
+
     def ensure_identity(self) -> None:
         """
         Configure git committer identity for the repository if missing.
         """
 
-        name = self.config.commit_name
-        email = self.config.commit_email
+        desired_name = self.config.commit_name
+        desired_email = self.config.commit_email
+        explicit = self.config.commit_identity_explicit
 
-        if not name or not email:
+        current_name = self._get_git_config("user.name")
+        current_email = self._get_git_config("user.email")
+
+        if explicit:
+            if desired_name:
+                self._run_git(["config", "user.name", desired_name])
+            if desired_email:
+                self._run_git(["config", "user.email", desired_email])
+            return
+
+        if current_name and current_email:
+            return
+
+        if not desired_name or not desired_email:
             raise GitHubConfigError(
                 "Git committer identity requires both GITHUB_COMMIT_NAME and GITHUB_COMMIT_EMAIL or a repo URL embedding credentials."
             )
 
-        self._run_git(["config", "user.name", name])
-        self._run_git(["config", "user.email", email])
+        if not current_name:
+            self._run_git(["config", "user.name", desired_name])
+
+        if not current_email:
+            self._run_git(["config", "user.email", desired_email])
+
+    def ensure_clean_submodules(self) -> None:
+        """
+        Verify that git submodules do not contain uncommitted changes.
+
+        Git refuses to commit when submodules are dirty; we raise an explicit error
+        so automation can surface a clear message.
+        """
+
+        result = self._run_git(
+            ["submodule", "foreach", "--recursive", "git status --porcelain"],
+            check=False,
+        )
+
+        dirty_output = result.stdout.strip()
+
+        if dirty_output:
+            raise GitCommandError(
+                "Dirty submodules detected. Commit or stash changes inside each submodule before retrying:\n"
+                f"{dirty_output}"
+            )
+
+    def _resolve_commit_message(self, message: str | None) -> str:
+        """
+        Resolve the commit message from the provided argument, environment, or user input.
+        """
+
+        if message and message.strip():
+            return message.strip()
+
+        env_message = os.getenv("GITHUB_COMMIT_MESSAGE", "").strip()
+        if env_message:
+            return env_message
+
+        try:
+            prompt = os.getenv("GITHUB_COMMIT_PROMPT", "Commit message")
+            resolved = input(f"{prompt}: ").strip()
+        except EOFError as exc:
+            raise GitCommandError("Commit message is required but could not be read from STDIN.") from exc
+
+        if not resolved:
+            raise GitCommandError("Commit message is required. Aborting commit.")
+
+        return resolved
 
     def ensure_branch(self, branch: str) -> None:
         """
@@ -253,7 +331,7 @@ class GitHubClient:
 
     def commit_and_push(
         self,
-        message: str,
+        message: str | None = None,
         *,
         paths: Iterable[str] | None = None,
         branch: str | None = None,
@@ -265,8 +343,10 @@ class GitHubClient:
         self.ensure_repository()
         self.ensure_identity()
         self.ensure_remote()
+        self.ensure_clean_submodules()
         self.add(paths)
-        committed = self.commit(message)
+        resolved_message = self._resolve_commit_message(message)
+        committed = self.commit(resolved_message)
         if not committed:
             return
         self.push(branch=branch)

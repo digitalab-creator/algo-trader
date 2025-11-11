@@ -1,0 +1,1514 @@
+[
+  {
+    "run_id": 75,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 5.352151734143423,
+    "total_pnl": 10704.303468286842,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 57,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 4.277720969480884,
+    "total_pnl": 8555.441938961765,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 74,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 4.04,
+    "total_pnl": 8080.0,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 39,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 4.039999999999985,
+    "total_pnl": 8079.9999999999745,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 77,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 3.5528768730267326,
+    "total_pnl": 7105.75374605346,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 42,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 3.3015434430452877,
+    "total_pnl": 6603.086886090567,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 16,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 3.2349437597860673,
+    "total_pnl": 6469.887519572131,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 24,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 3.2349437597860673,
+    "total_pnl": 6469.887519572131,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 44,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.9999999999999853,
+    "total_pnl": 5999.999999999983,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 70,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.9999999999999853,
+    "total_pnl": 5999.999999999983,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 79,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.9999999999999853,
+    "total_pnl": 5999.999999999983,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 10,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.9996000000000205,
+    "total_pnl": 5999.200000000017,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 67,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.999600000000006,
+    "total_pnl": 5999.199999999993,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 47,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.999599999999991,
+    "total_pnl": 5999.199999999975,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 41,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.6844444444444377,
+    "total_pnl": 5368.8888888888905,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 76,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.6844444444444377,
+    "total_pnl": 5368.888888888896,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 50,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.268528008614827,
+    "total_pnl": 4537.056017229661,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 69,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.2685280086148123,
+    "total_pnl": 4537.056017229648,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 46,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.0,
+    "total_pnl": 4000.0000000000114,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 71,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.0,
+    "total_pnl": 4000.0,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 73,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.0,
+    "total_pnl": 4000.0,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 78,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 2.0,
+    "total_pnl": 4000.0,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 81,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 2.0,
+    "total_pnl": 4000.0,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 43,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.9999999999999856,
+    "total_pnl": 3999.9999999999827,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 20,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.9700000000000144,
+    "total_pnl": 3940.0000000000173,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 28,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.9700000000000144,
+    "total_pnl": 3940.0000000000173,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 36,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.9699999999999853,
+    "total_pnl": 3939.9999999999836,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 40,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.9699999999999853,
+    "total_pnl": 3939.9999999999836,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 52,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.9699999999999853,
+    "total_pnl": 3939.9999999999836,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 15,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.9696040000000068,
+    "total_pnl": 3939.2080000000174,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 23,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.9696040000000068,
+    "total_pnl": 3939.2080000000174,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 31,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.9696039999999921,
+    "total_pnl": 3939.2079999999896,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 49,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.657600000000006,
+    "total_pnl": 3315.200000000003,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 68,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.657600000000006,
+    "total_pnl": 3315.2000000000066,
+    "win_rate": 66.66666666666666,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 18,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.478508501606324,
+    "total_pnl": 2957.0170032126452,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 26,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.478508501606324,
+    "total_pnl": 2957.0170032126452,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 72,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.333333333333343,
+    "total_pnl": 2666.6666666666742,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 80,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.333333333333343,
+    "total_pnl": 2666.6666666666742,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 45,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 1.3333333333333286,
+    "total_pnl": 2666.66666666667,
+    "win_rate": 100.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 34,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 1.0696807649118127,
+    "total_pnl": 2139.3615298236277,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 19,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.9800000000000145,
+    "total_pnl": 1960.0000000000168,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 27,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.9800000000000145,
+    "total_pnl": 1960.0000000000168,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 22,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1959.9999999999886,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 30,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1959.9999999999886,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 38,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1960.0000000000114,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 54,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1960.0000000000114,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 55,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1960.0000000000073,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 60,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.98,
+    "total_pnl": 1960.0,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 35,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.9799999999999854,
+    "total_pnl": 1959.9999999999832,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 51,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.9799999999999854,
+    "total_pnl": 1959.9999999999832,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 48,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.9502999999999883,
+    "total_pnl": 1900.599999999983,
+    "win_rate": 33.33333333333333,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 66,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.9502999999999883,
+    "total_pnl": 1900.599999999983,
+    "win_rate": 33.33333333333333,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 17,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.6410240000000049,
+    "total_pnl": 1282.0479999999961,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 25,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.6410240000000049,
+    "total_pnl": 1282.0479999999961,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 33,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.6410240000000049,
+    "total_pnl": 1282.0480000000025,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 21,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 50,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 639.9999999999959,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 29,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 639.9999999999959,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 37,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 640.0000000000041,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 53,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 60,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 640.0000000000041,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 58,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 639.9999999999986,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 61,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": 0.32,
+    "total_pnl": 639.9999999999964,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 59,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": 0.08881042276867084,
+    "total_pnl": 177.62084553734985,
+    "win_rate": 50.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 32,
+    "params": {
+      "ema_fast": 20,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -0.05920300000000861,
+    "total_pnl": -118.40600000001632,
+    "win_rate": 25.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 11,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 12,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 13,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 14,
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 62,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 2.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 63,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 64,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 2.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 65,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 20,
+      "stop_atr_multiple": 1.5,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -1.0,
+    "total_pnl": -2000.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  },
+  {
+    "run_id": 56,
+    "params": {
+      "ema_fast": 30,
+      "ema_slow": 40,
+      "breakout_lookback": 10,
+      "stop_atr_multiple": 1.0,
+      "take_atr_multiple": 3.0
+    },
+    "roi": -1.9900000000000002,
+    "total_pnl": -3980.0,
+    "win_rate": 0.0,
+    "strategy": "medium_swing_v1",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA"
+    ],
+    "start": "2023-01-01",
+    "end": "2024-01-01"
+  }
+]
