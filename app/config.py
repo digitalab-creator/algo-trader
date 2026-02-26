@@ -65,7 +65,7 @@ class IBSettings(BaseSettings):
 
 
 class DatabaseSettings(BaseSettings):
-    url: str = Field(default="postgresql+psycopg://user:pass@db:5432/algo")
+    url: str = Field(default="")
 
 
 class Settings(BaseSettings):

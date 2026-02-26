@@ -1,115 +1,59 @@
-# 🏴‍☠️ Algo-Fleet — Trading MVP Blueprint
+# Algo-Fleet
 
-A modular algo-trading stack (blueprint / portfolio showcase) that connects to Interactive Brokers (paper + live) and splits capital across three predefined risk layers. Copy `env.example` to `.env` and configure before running. This blueprint lets a new engineer spin up the system within a day and scales toward ML-driven extensions.
+A modular algorithmic trading stack that connects to Interactive Brokers (paper or live) and allocates capital across three risk layers: high-risk intraday, medium-risk swing, and low-risk passive ETFs. Trades and positions are stored in PostgreSQL. Market data is stored in DuckDB for analysis.
 
-## 🎯 Core Goals
-- Dual-mode IBKR connectivity with a single `MODE` switch (`paper`/`live`).
-- Capital allocation: 10 % high-risk intraday, 30 % medium-risk swing, 60 % low-risk passive ETFs.
-- Unified trade/position storage in PostgreSQL via SQLModel.
-- Data lake foundation for ML using DuckDB + Polars + yfinance.
-- FastAPI interface for control & observability, Docker-first deployment.
+## What it does
 
-## 🧱 Tech Stack
-| Layer            | Choice                        | Rationale                         |
-| ---------------- | ----------------------------- | --------------------------------- |
-| API              | FastAPI                       | Async-friendly, well documented   |
-| ORM              | SQLModel (SQLAlchemy engine)  | Pydantic models + typing          |
-| Broker           | ib_insync                     | Stable IBKR client abstraction    |
-| Data             | DuckDB, Polars, yfinance      | Local OLAP + fast dataframe ops   |
-| Database         | PostgreSQL                    | Industry standard transactional   |
-| Config           | Pydantic Settings + dotenv    | Secure secret management          |
-| Containers       | Docker, docker-compose        | Reproducible environment          |
-| Scheduling       | cron / Celery (future)        | Strategy automation               |
+- Connects to Interactive Brokers via a single mode switch (paper or live).
+- Splits capital: 10% high-risk intraday, 30% medium-risk swing, 60% low-risk passive ETFs.
+- Stores trades and strategy runs in PostgreSQL (SQLModel).
+- Fetches and stores historical data in DuckDB using Polars and yfinance.
+- Exposes a FastAPI API for control and inspection.
 
-## 📂 Repository Layout
-```
-algo-fleet/
-  app/
-    main.py
-    config.py
-    core/
-      broker_client.py
-      db.py
-      orders.py
-      risk.py
-    models/
-      trade.py
-      position.py
-    strategies/
-      high_intraday.py
-      medium_swing.py
-      low_passive.py
-    services/
-      data_fetcher.py
-  scripts/
-    run_high.py
-    run_medium.py
-    run_low.py
-    seed_db.py
-  data/
-    README.md          # placeholder for DuckDB files
-  Dockerfile
-  docker-compose.yml
-  requirements.txt
-  .env.example
-  README.md
-```
+## Tech stack
 
-## ⚙️ Quickstart (Paper Mode)
-1. Install Docker & Docker Compose v2.
-2. Duplicate `env.example` to `.env` and set credentials (`MODE=paper` for IB paper trading). Include your GitHub repo URL/token if you plan to push from CI.
-3. Launch the stack (migrations auto-run on startup):
+- **API:** FastAPI
+- **Database:** PostgreSQL, SQLModel
+- **Data:** DuckDB, Polars, yfinance
+- **Broker:** ib_insync (Interactive Brokers)
+- **Deployment:** Docker, docker-compose
+
+## Repository layout
+
+- `app/` — FastAPI app, config, routes, strategies (high_intraday, medium_swing, low_passive), core (broker_client, orders, risk), models (trade, strategy_run), services (data_fetcher, market_data)
+- `lib/` — Shared infrastructure (database client, Redis, logging, middleware)
+- `scripts/` — run_high.py, run_medium.py, run_low.py, seed_db.py
+- `data/` — DuckDB files (e.g. algo.duckdb)
+- `env.example` — Copy to `.env` and set your credentials
+
+## How to use
+
+1. Install Docker and Docker Compose v2.
+2. Copy `env.example` to `.env`. Set `DATABASE_URL`, and for IB paper trading set `MODE=paper`. Use `BROKER_SIMULATED=true` to run without a live broker connection.
+3. Start the stack (migrations run on startup):
    ```bash
    docker compose up --build
    ```
-4. (Optional) Connect a real IBKR gateway: set `BROKER_SIMULATED=false` and start TWS/IBG.  
-   Leave the default `BROKER_SIMULATED=true` to run in fully offline simulation mode using live market data.
-5. Trigger a strategy runner (each run is tracked in `StrategyRun` + `Trade` tables):
+4. Optional: connect a real IBKR gateway (TWS or IB Gateway). Set `BROKER_SIMULATED=false` and configure host/port in `.env`.
+5. Run a strategy (e.g. medium-risk swing). Each run is stored as a `StrategyRun` with related `Trade` records:
    ```bash
    docker compose exec api python scripts/run_medium.py
    ```
-6. Inspect trades via FastAPI docs at `http://localhost:8000/docs` or query `/trades`.
-7. When ready to push code, configure `.env` from `env.example` (including `GITHUB_BRANCH`, default `dev`). The helper will create the branch locally if it doesn’t exist. Then run:
-   ```bash
-   python scripts/push_to_github.py
-   ```
+6. Open the API docs at `http://localhost:8000/docs` or call `GET /trades` to inspect trades.
 
-## 🧠 Risk & Strategy Overview
-- **High Risk (10 %)** — Intraday breakout, 5-min bars, tight stops, bracket orders.
-- **Medium Risk (30 %)** — Swing trading with EMA cross + ATR breakout.
-- **Low Risk (60 %)** — Passive ETF allocation with weekly rebalance.
+## Strategy overview
 
-Risk budgets derive from live equity fetched via IB account summary and enforced prior to order submission.
+- **High risk (10%)** — Intraday breakout, 5-min bars, bracket orders.
+- **Medium risk (30%)** — Swing trading with EMA cross and ATR breakout.
+- **Low risk (60%)** — Passive ETF allocation with weekly rebalance.
 
-### Deal Tracking & Analytics
-- Every execution logs a `StrategyRun` record with timing, budget, and outcome metadata.
-- Each order attempt creates a `Trade` record capturing signals, sizing, broker status, and JSON snapshots for deeper analytics.
-- Use these tables to aggregate performance by strategy, layer, signal type, and risk budget.
+Risk limits use equity from the IB account summary and are applied before sending orders.
 
-## 📊 Data Layer
-- Historical pulls via yfinance, stored in DuckDB under `data/algo.duckdb`.
-- Polars DataFrame workflow for fast feature engineering, ready for ML upgrades.
+## Data layer
 
-## 🚀 Deployment Targets
-- Local: Docker Compose with mounted volume for hot reload.
-- Cloud (future): Railway, Fly.io, or GCP Cloud Run; Postgres via managed service.
-- CI/CD: GitHub Actions matrix (tests + lint + docker build).
+Historical data is pulled via yfinance and stored in DuckDB under `data/algo.duckdb`. Use Polars for feature work and further analysis.
 
-## 🛣 Roadmap Highlights
-1. **MVP** — Strategy runners, API, Postgres logging, IBKR paper mode.
-2. **v2** — Dashboard (Streamlit/React), Prometheus metrics, alerting.
-3. **v3** — Backtesting harness, ML experiments (LightGBM, scikit-learn).
-4. **v4** — Automated scheduling, Feature store (Feast), production deployments.
+## Documentation
 
-## 📬 Pitch Snippet
-> “המערכת שלנו מחלקת סיכונים בזמן אמת בין שלוש אסטרטגיות עצמאיות — ממונפת, סווינג, ופסיבית — כולן רצות דרך IBKR API על תשתית מודולרית מבוססת FastAPI, PostgreSQL ו-Docker, עם Data Lake שמוכן ל-ML.”
-
-## ✅ Next Steps
-- Track strategy performance using paper trading logs.
-- After 4–8 profitable paper weeks, flip `MODE=live` and tighten monitoring.
-
-## 📚 Documentation
-- `docs/commands.md` — quick Docker & curl command cheatsheet.
-- `docs/strategy.md` — business narrative and risk-alignment for each trading layer.
-
-
+- `docs/commands.md` — Docker and curl command reference.
+- `docs/strategy.md` — Strategy and risk description.
