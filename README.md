@@ -1,6 +1,6 @@
 # 🏴‍☠️ Algo-Fleet — Trading MVP Blueprint
 
-Algo-Fleet is a modular algo-trading stack that connects to Interactive Brokers (paper + live) and splits capital across three predefined risk layers. This blueprint lets a new engineer spin up the system within a day and scales toward ML-driven extensions.
+A modular algo-trading stack (blueprint / portfolio showcase) that connects to Interactive Brokers (paper + live) and splits capital across three predefined risk layers. Copy `env.example` to `.env` and configure before running. This blueprint lets a new engineer spin up the system within a day and scales toward ML-driven extensions.
 
 ## 🎯 Core Goals
 - Dual-mode IBKR connectivity with a single `MODE` switch (`paper`/`live`).
@@ -52,7 +52,6 @@ algo-fleet/
   docker-compose.yml
   requirements.txt
   .env.example
-  PLAN.md
   README.md
 ```
 
@@ -106,7 +105,6 @@ Risk budgets derive from live equity fetched via IB account summary and enforced
 > “המערכת שלנו מחלקת סיכונים בזמן אמת בין שלוש אסטרטגיות עצמאיות — ממונפת, סווינג, ופסיבית — כולן רצות דרך IBKR API על תשתית מודולרית מבוססת FastAPI, PostgreSQL ו-Docker, עם Data Lake שמוכן ל-ML.”
 
 ## ✅ Next Steps
-- Follow `PLAN.md` for phased implementation.
 - Track strategy performance using paper trading logs.
 - After 4–8 profitable paper weeks, flip `MODE=live` and tighten monitoring.
 

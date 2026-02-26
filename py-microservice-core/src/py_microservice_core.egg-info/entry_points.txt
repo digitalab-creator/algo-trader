@@ -1,2 +1,0 @@
-[console_scripts]
-validate-microservice = py_microservice_core.validation.cli:main
